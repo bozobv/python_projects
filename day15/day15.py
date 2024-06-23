@@ -1,6 +1,5 @@
 from abc import abstractmethod
 import time
-import math
 
 MENU = {
     "espresso": {
@@ -35,7 +34,7 @@ resources = {
     "coffee": 100,
 }
 
-def choose():
+def offer_choose():
     while(True):
         choice = input("Mit kíván a tested, teswérem? (espresso/latte/cappuccino)  ")
         if choice == "report" or choice == "off":
@@ -45,7 +44,6 @@ def choose():
                 if name == choice:
                     return choice
         
-
 def print_report():
     for name in resources:
         print(f"{name}: {resources[name]}")
@@ -61,6 +59,8 @@ def check_ings(product):
     return True
 
 def req_money(product):
+    
+    #ezt be lehet még tenni egy függvénybe
     global profit
     cost = MENU[product]['cost']
     print(f"Ez összesen ${cost} lesz")
@@ -75,7 +75,7 @@ def req_money(product):
     elif cost == 0:
         print("pontosan attál tesomsz")
         profit += MENU[product]['cost']
-    else:
+    else: 
         profit += MENU[product]['cost']
         exchange = -round(cost, 2)
         print(f"pöppet túlfizettél testem, itt van vissza ${exchange}")
@@ -90,13 +90,11 @@ def create_product(product):
     
     print(f"Parancsolj öcskös, egy {product}")
 
-
-
 def coffe_machine():
     
     running = True
     while(running):
-        choice = choose()
+        choice = offer_choose()
         if choice == "off":
             return
         if choice == "report":
@@ -105,6 +103,5 @@ def coffe_machine():
             if check_ings(choice):
                 if req_money(choice):
                     create_product(choice)
-                    
-    
+                       
 coffe_machine()
