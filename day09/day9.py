@@ -79,13 +79,13 @@ def blind_bidding():
         name = input("Mi a neved   ")
         bidders[name] = int(input("Mennyi lóvét teszel fel?  $"))
 
-        cont = input("Van még csicska aki fogadni akar? igen/nem  ").lower()
+        cont = input("Van még aki fogadni akar? igen/nem  ").lower()
 
         if cont == "nem":
             print("jóvan, akkor megállunk")
             stopped = True
         elif cont != "igen":
-            print("tanulj meg irni hulyegyerek")
+            print("tanulj meg irni")
 
     max = 0
     winner = "senki sem tett semmit, faszák vagytok"
@@ -94,7 +94,7 @@ def blind_bidding():
             max = bidders[name]
             winner = name
 
-    print(f"A győztes, a hatalmas péniszű {winner}!!!!!! Ilyen sok pénzt vesztett: ${max}")
+    print(f"A győztes, a hatalmas {winner}!!!!!! Ilyen sok pénzt vesztett: ${max}")
 
 
 blind_bidding()
