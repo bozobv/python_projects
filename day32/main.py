@@ -1,7 +1,7 @@
 import smtplib
 
 my_email = "lajosteszt5@gmail.com"
-password = "neeagooemttjyrvw"
+password = ""
 
 try:
     print("kezdődik")
