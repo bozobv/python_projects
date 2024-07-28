@@ -46,7 +46,7 @@ def my_sunset_time():
 def send_mail():
 
     my_email = "lajosteszt5@gmail.com"
-    password = "neeagooemttjyrvw"
+    password = ""
 
     try:
         print("kezdődik")
