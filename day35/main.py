@@ -1,6 +1,6 @@
 import requests
 
-API = "6b696522c6188687de4da9ec852a9525"
+API = ""
 LAT = 47.501423
 LNG = 19.071974
 
